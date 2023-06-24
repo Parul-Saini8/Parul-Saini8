@@ -1,0 +1,39 @@
+@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Home page";
+}
+
+<div class="text-center">
+    <h1 class="display-4">Welcome to the Fitness Tracker!</h1>
+    <p>Created by Parul Saini</p>
+    <p>Current Date and Time: @DateTime.Now</p>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Name</th>
+                <th>Description</th>
+                <th>Date Created</th>
+                <th>Creator</th>
+                <th>Quantity</th>
+                <th>Category</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var craft in Model.Crafts)
+            {
+                <tr>
+                    <td>@craft.ID</td>
+                    <td>@craft.Name</td>
+                    <td>@craft.Description</td>
+                    <td>@craft.DateCreated</td>
+                    <td>@craft.Creator</td>
+                    <td>@craft.Quantity</td>
+                    <td>@craft.Category</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
